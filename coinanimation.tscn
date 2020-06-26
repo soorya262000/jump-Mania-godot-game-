@@ -1,0 +1,193 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/art/coin/coin.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "coinsmove"
+length = 2.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect/coinanimation/AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 421.885, 285.456 ), Vector2( 398.617, 262.188 ), Vector2( 495.015, 96.5377 ), Vector2( 644.599, 38.3662 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect/coinanimation/AnimatedSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.68494, 2.96895 ), Vector2( 1.8844, 1.99943 ), Vector2( 1.05338, 0.614394 ), Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect/coinanimation/AnimatedSprite2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 361.68, 308.445 ), Vector2( 387.165, 231.991 ), Vector2( 464.357, 207.615 ), Vector2( 648.659, 40.3025 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect/coinanimation/AnimatedSprite3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 408.584, 304.536 ), Vector2( 511.63, 260.215 ), Vector2( 596.948, 133.53 ), Vector2( 647.918, 35.2849 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect/coinanimation/AnimatedSprite2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.91451, 4.13643 ), Vector2( 2.80648, 3.02841 ), Vector2( 2.16013, 1.27403 ), Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect/coinanimation/AnimatedSprite3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.19153, 3.16691 ), Vector2( 2.52949, 2.33589 ), Vector2( 2.39098, 1.78187 ), Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ColorRect/coinanimation/AnimatedSprite4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 450.273, 255.862 ), Vector2( 505.675, 184.948 ), Vector2( 585.083, 98.1526 ), Vector2( 643.07, 32.0402 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("ColorRect/coinanimation/AnimatedSprite4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.042, -3.16941 ), Vector2( 2.65697, -1.92288 ), Vector2( 1.50277, -1.23036 ), Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ColorRect/coinanimation/AnimatedSprite5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 424.963, 270.68 ), Vector2( 526.901, 180.929 ), Vector2( 596.338, 93.395 ), Vector2( 644.352, 35.7776 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("ColorRect/coinanimation/AnimatedSprite5:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.87697, 1.98705 ), Vector2( 1.46145, 1.15603 ), Vector2( 1.18445, 0.740519 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 8, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 24, 0, 8, 8 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="coinanimation" type="AnimationPlayer"]
+root_node = NodePath(".")
+autoplay = "coinsmove"
+method_call_mode = 1
+anims/coinsmove = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 491.498, 102.581 )
+scale = Vector2( 1.08369, 0.664921 )
+frames = SubResource( 6 )
+frame = 3
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
+position = Vector2( 593.805, 96.5883 )
+scale = Vector2( 1.19456, 0.755677 )
+frames = SubResource( 6 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+position = Vector2( 582.186, 101.319 )
+scale = Vector2( 1.54487, -1.25562 )
+frames = SubResource( 6 )
+frame = 3
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 461.541, 208.504 )
+scale = Vector2( 2.18371, 1.33803 )
+frames = SubResource( 6 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 593.836, 138.152 )
+scale = Vector2( 2.39603, 1.80208 )
+frames = SubResource( 6 )
+frame = 2
+playing = true

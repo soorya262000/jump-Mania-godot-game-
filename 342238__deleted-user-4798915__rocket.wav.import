@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/342238__deleted-user-4798915__rocket.wav-b11250fd21222b89cee28567ccf18a64.sample"
+
+[deps]
+
+source_file="res://342238__deleted-user-4798915__rocket.wav"
+dest_files=[ "res://.import/342238__deleted-user-4798915__rocket.wav-b11250fd21222b89cee28567ccf18a64.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

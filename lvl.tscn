@@ -1,0 +1,291 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://lvl.gd" type="Script" id=2]
+[ext_resource path="res://strongpunch.wav" type="AudioStream" id=3]
+[ext_resource path="res://reactor.png" type="Texture" id=4]
+[ext_resource path="res://icons8-pause-24.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/coin/coin.png" type="Texture" id=6]
+[ext_resource path="res://play-button.png" type="Texture" id=7]
+[ext_resource path="res://icons8-present-to-all-80.png" type="Texture" id=8]
+[ext_resource path="res://sound-png-35757.png" type="Texture" id=9]
+[ext_resource path="res://334660__vultraz168__robotic-scream.wav" type="AudioStream" id=10]
+[ext_resource path="res://highscore.png" type="Texture" id=11]
+[ext_resource path="res://CanvasLayer4.gd" type="Script" id=12]
+[ext_resource path="res://src/Level/ParallaxBackground.tscn" type="PackedScene" id=13]
+[ext_resource path="res://dead_sequence_cnavas.gd" type="Script" id=14]
+[ext_resource path="res://icons8-ok-24.png" type="Texture" id=15]
+[ext_resource path="res://icons8-cancel-26.png" type="Texture" id=16]
+[ext_resource path="res://266100__marregheriti__level-up.wav" type="AudioStream" id=17]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 6 )
+region = Rect2( 8, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 16, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 24, 0, 8, 8 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="Animation" id=6]
+resource_name = "scalehigh"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("highscore")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+
+[node name="Node2D" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="cam" type="Camera2D" parent="."]
+position = Vector2( 402.459, 251.725 )
+current = true
+process_mode = 0
+drag_margin_left = 1.0
+drag_margin_top = 1.0
+drag_margin_right = 1.0
+drag_margin_bottom = 1.0
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+pause_mode = 1
+position = Vector2( 404.522, 360 )
+z_index = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+margin_left = 584.453
+margin_top = -13.1979
+margin_right = 782.453
+margin_bottom = 40.8021
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coins" type="Label" parent="CanvasLayer/NinePatchRect"]
+margin_left = 137.0
+margin_top = 45.0
+margin_right = 214.0
+margin_bottom = 76.0
+text = "0
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/NinePatchRect"]
+position = Vector2( 59.57, 51.0603 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="batteries" type="Label" parent="CanvasLayer/NinePatchRect2"]
+margin_left = 722.0
+margin_top = 90.0
+margin_right = 804.0
+margin_bottom = 124.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/NinePatchRect2"]
+position = Vector2( 640.241, 96.5313 )
+scale = Vector2( 0.0409199, 0.033351 )
+texture = ExtResource( 4 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jump" type="TouchScreenButton" parent="CanvasLayer2/Control"]
+position = Vector2( 5.17221, 157.404 )
+scale = Vector2( 2.60876, 2.78534 )
+normal = ExtResource( 8 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer2/Control"]
+pause_mode = 1
+position = Vector2( 76.1043, 32.1006 )
+scale = Vector2( 1.53734, 1.40591 )
+normal = ExtResource( 5 )
+
+[node name="break" type="TouchScreenButton" parent="CanvasLayer2/Control"]
+position = Vector2( 802.837, 377.403 )
+rotation = 3.14159
+scale = Vector2( 2.609, 2.785 )
+normal = ExtResource( 8 )
+
+[node name="soundonoff" type="TouchScreenButton" parent="CanvasLayer2/Control"]
+position = Vector2( 142.098, 22.2729 )
+scale = Vector2( 0.113561, 0.10208 )
+normal = ExtResource( 9 )
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="game start" type="TouchScreenButton" parent="CanvasLayer3"]
+position = Vector2( 332.403, 189.945 )
+scale = Vector2( 0.342344, 0.329697 )
+normal = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="CanvasLayer3"]
+margin_left = 324.789
+margin_top = 128.0
+margin_right = 527.789
+margin_bottom = 170.0
+text = "Jump Mania"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+script = ExtResource( 12 )
+
+[node name="Control" type="Control" parent="CanvasLayer4"]
+margin_left = -1.10803
+margin_top = -1.10803
+margin_right = 38.892
+margin_bottom = 38.892
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="highscore" type="AudioStreamPlayer2D" parent="CanvasLayer4/Control"]
+position = Vector2( -706.922, -96.3985 )
+stream = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer4/Control"]
+position = Vector2( 425.788, 125.789 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer4/Control"]
+method_call_mode = 1
+anims/scalehigh = SubResource( 6 )
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource( 13 )]
+
+[node name="dead_sequence_cnavas" type="CanvasLayer" parent="."]
+script = ExtResource( 14 )
+
+[node name="ColorRect" type="ColorRect" parent="dead_sequence_cnavas"]
+margin_left = 211.164
+margin_top = 72.0
+margin_right = 613.164
+margin_bottom = 453.0
+color = Color( 0.121569, 0.113725, 0.113725, 0.964706 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="extralife" type="TouchScreenButton" parent="dead_sequence_cnavas/ColorRect"]
+position = Vector2( 64.2657, 267.035 )
+scale = Vector2( 2.61587, 2.66204 )
+normal = ExtResource( 15 )
+
+[node name="noextralife" type="TouchScreenButton" parent="dead_sequence_cnavas/ColorRect"]
+position = Vector2( 277.007, 264.819 )
+scale = Vector2( 2.53419, 2.57681 )
+normal = ExtResource( 16 )
+
+[node name="dead_sequence_label" type="Label" parent="dead_sequence_cnavas/ColorRect"]
+margin_left = 116.0
+margin_top = 60.0
+margin_right = 282.0
+margin_bottom = 139.0
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exitcanvas" type="CanvasLayer" parent="."]
+
+[node name="game_exit" type="ConfirmationDialog" parent="exitcanvas"]
+pause_mode = 2
+margin_left = 289.606
+margin_top = 239.205
+margin_right = 547.606
+margin_bottom = 309.205
+popup_exclusive = true
+window_title = "Exit game"
+dialog_text = "Press ok to exit"
+dialog_hide_on_ok = false
+dialog_autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="revive_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
+[connection signal="breakfloor" from="." to="Player" method="_on_Node2D_breakfloor"]
+[connection signal="jump" from="." to="Player" method="_on_Node2D_jump"]
+[connection signal="died" from="Player" to="." method="_on_Player_died"]
+[connection signal="nextfloor" from="Player" to="." method="_on_Player_nextfloor"]
+[connection signal="pressed" from="CanvasLayer2/Control/jump" to="Player" method="_on_jump_pressed"]
+[connection signal="released" from="CanvasLayer2/Control/jump" to="Player" method="_on_jump_released"]
+[connection signal="pressed" from="CanvasLayer2/Control/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Control/break" to="Player" method="_on_break_pressed"]
+[connection signal="released" from="CanvasLayer2/Control/break" to="Player" method="_on_break_released"]
+[connection signal="pressed" from="CanvasLayer2/Control/soundonoff" to="." method="_on_soundonoff_pressed"]
+[connection signal="pressed" from="CanvasLayer3/game start" to="." method="_on_game_start_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="animation_finished" from="CanvasLayer4/Control/AnimationPlayer" to="CanvasLayer4" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="dead_sequence_cnavas/ColorRect/extralife" to="." method="_on_extralife_pressed"]
+[connection signal="pressed" from="dead_sequence_cnavas/ColorRect/noextralife" to="." method="_on_noextralife_pressed"]
+[connection signal="confirmed" from="exitcanvas/game_exit" to="." method="_on_game_exit_confirmed"]
+[connection signal="hide" from="exitcanvas/game_exit" to="." method="_on_game_exit_hide"]

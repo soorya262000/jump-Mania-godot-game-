@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fireparticle.gd" type="Script" id=1]
+[ext_resource path="res://342238__deleted-user-4798915__rocket.wav" type="AudioStream" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.203947, 0.540741, 1 )
+colors = PoolColorArray( 0.772949, 0.220523, 0.09058, 1, 0.972656, 0.143652, 0.0379944, 1, 0.891602, 0.271537, 0.0626907, 1, 0.875977, 0.666733, 0.0581703, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.251429, 0.873864 ), 0.0, 0.0, 0, 0, Vector2( 0.514286, 0.755682 ), 0.0, 0.0, 0, 0, Vector2( 0.988571, 0.573864 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_box_extents = Vector3( 3, 8, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 0.0
+gravity = Vector3( 0, -1, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 10.0
+angle = -57.9
+scale = 7.0
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[node name="Particles2D" type="Particles2D"]
+position = Vector2( 2.5, -0.264 )
+amount = 600
+lifetime = 4.0
+speed_scale = 5.0
+process_material = SubResource( 5 )
+script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 2.63521, 0.263519 )
+stream = ExtResource( 2 )
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]

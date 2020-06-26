@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player.png" type="Texture" id=1]
+[ext_resource path="res://enemy2.gd" type="Script" id=2]
+
+[node name="Enemy2" type="Node2D"]
+scale = Vector2( 1.6, 1.5 )
+script = ExtResource( 2 )
+
+[node name="StaticBody2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 1 )
+hframes = 60
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -4.65623, 12.0385, -11.1652, 9.03435, -6.65897, -11.2435, 3.85545, -8.23935, 5.60786, 3.77714, 4.60648, 11.7881 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 6.75927, 4.25584 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

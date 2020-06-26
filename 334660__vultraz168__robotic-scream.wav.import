@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/334660__vultraz168__robotic-scream.wav-d1622980f658444c8dc35a3855ff21ca.sample"
+
+[deps]
+
+source_file="res://334660__vultraz168__robotic-scream.wav"
+dest_files=[ "res://.import/334660__vultraz168__robotic-scream.wav-d1622980f658444c8dc35a3855ff21ca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
